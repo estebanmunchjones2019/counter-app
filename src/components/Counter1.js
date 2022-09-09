@@ -1,11 +1,11 @@
-import useCounter from "../hooks/useCounter";
+import useCounterStore from "../hooks/useCounterStore";
 
 function Counter1() {
-    const [counter, setCounter] = useCounter('Counter1');
+    const [globalCounter, incrementCounter] = useCounterStore();
     return (
         <>
-            <div>{counter}</div>
-            <button onClick={() => setCounter(counter + 1)}>
+            <div>{globalCounter}</div>
+            <button onClick={incrementCounter}>
                 Increment counter
             </button>
         </>
